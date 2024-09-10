@@ -1,9 +1,12 @@
 import type { Config } from "tailwindcss";
+import { dark, light } from "./styles/theme";
 
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./layouts/**/*.{js,ts,jsx,tsx,mdx}",
+    "./modules/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -13,6 +16,19 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+    },
+    borderRadius: {
+      "radius-0": "0",
+      "radius-4": "4px",
+      "radius-8": "8px",
+      "radius-12": "12px",
+      "radius-16": "16px",
+      "radius-20": "20px",
+      "radius-24": "24px",
+      "radius-28": "28px",
+      "radius-32": "32px",
+      "radius-40": "40px",
+      "radius-64": "64px",
     },
     colors: {
       white: "var(--white)",
@@ -46,74 +62,13 @@ const config: Config = {
       {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
-          /* global */
-          "--white": "#ffffff",
-
-          /* primary-1 */
-          "--primary-1": "#068747",
-          "--on-primary-1": "var(--white)",
-          "--primary-1-container": "#1bc571",
-          "--on-primary-1-container": "#022614",
-
-          /* primary-2 */
-          "--primary-2": "#ee7114",
-          "--on-primary-2": "#1f1913",
-          "--primary-2-container": "#f29a59",
-          "--on-primary-2-container": "#241e18",
-
-          /* secondary */
-          "--secondary": "#044122",
-          "--on-secondary": "var(--white)",
-          "--secondary-container": "#a1ada7",
-          "--on-secondary-container": "#032313",
-
-          /* error */
-          "--error": "#d32222",
-          "--on-error": "#fff9f9",
-          "--error-container": "#e5bfbf",
-          "--on-error-container": "#1c1717",
-
-          /* warning */
-          "--warning": "#edb124",
-          "--on-warning": "#555047",
-          "--warning-container": "#f2d99d",
-          "--on-warning-container": "#262219",
-
-          /* neutral */
-          /* TODO[@mahdiabaszadeh */
-
-          /* charts */
-          "--charts-01": "#aa4a4a",
-          "--charts-02": "#fd8b8b",
-          "--charts-03": "#f0f1f0",
-          "--charts-04": "#79d2de",
-          "--charts-05": "#147ad6",
-          "--charts-06": "#67d9b0",
-          "--charts-07": "#ffc300",
-          "--charts-08": "#001aff",
-          "--charts-09": "#bdc2bd",
-          "--charts-10": "#d6dcd6",
-          "--charts-11": "#deaf79",
-          "--charts-12": "#b179de",
-          "--charts-13": "#b6c8d8",
-          "--charts-14": "#72fd1d",
-          "--charts-15": "#b7e59b",
-          "--charts-16": "#ea74f4",
-          "--charts-17": "#de799d",
-          "--charts-18": "#b6dde9",
-          "--charts-19": "#795428",
-          "--charts-20": "#c3ef11",
-          "--charts-21": "#b3b1b1",
-          "--charts-22": "#ff9900",
-
-          /* information */
-          "--information": "#fea801",
-          "--information-2": "#febc2e",
+          ...light,
         },
       },
       {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
+          ...dark,
         },
       },
     ], // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
